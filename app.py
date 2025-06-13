@@ -8,6 +8,10 @@ invoices = [
     {"id": 3, "customer": "Gamma Inc", "amount": 540.00, "status": "paid"}
 ]
 
+@app.route('/')
+def home():
+    return "Invoice API is running. Use /invoices to get invoice data."
+
 @app.route('/invoices')
 def get_all_invoices():
     return jsonify(invoices)
